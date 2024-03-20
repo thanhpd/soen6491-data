@@ -369,7 +369,7 @@ for commit_hash in tqdm(refactoring_commits):
         subprocess.run(["git", "checkout", commit, '--force'], capture_output=True)
 
         os.chdir(old_dir)
-        subprocess.run(["java", "-jar", "organic-v0.1.1-OPT.jar", "-sf", f"tmp/output/smells/{repo_name}-{commit}.json", "-src", f"tmp/{repo_name}"], capture_output=True)
+        subprocess.run(["java", "-jar", "organic-v0.1.1-OPT.jar", "-sf", f"tmp/output/smells/{repo_name}-{commit}.json", "-src", f"tmp/{repo_name}"])
 
         refactored_files = []
         if commit in commit_refactorings:
